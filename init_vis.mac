@@ -1,0 +1,25 @@
+# init_vis.mac
+
+# Initialize geometry & physics
+/run/initialize
+
+# Open a Qt OpenGL viewer
+/vis/open OGLSQt 800x600-0+0
+
+# Create scene and add geometry
+/vis/scene/create
+/vis/scene/add/volume
+/vis/scene/add/axes 0 0 0 50 cm
+/vis/scene/add/trajectories
+
+# Store trajectories for interactive stepping
+/tracking/storeTrajectory 1
+
+# Attach the scene
+/vis/sceneHandler/attach
+
+# Viewer refresh and centering
+/vis/viewer/setAutoRefresh true
+/vis/viewer/autoZoom
+/vis/viewer/zoom 1.0
+/vis/viewer/set/viewpointThetaPhi 80 20
