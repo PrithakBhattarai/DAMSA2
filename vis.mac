@@ -1,0 +1,19 @@
+/run/initialize
+
+/vis/open OGLSQt 800x600-0+0
+/vis/scene/create
+/vis/scene/add/volume
+/vis/scene/add/axes 0 0 0 50 cm
+/vis/scene/add/trajectories smooth
+
+/tracking/storeTrajectory 1
+/vis/scene/endOfEventAction accumulate
+
+/vis/sceneHandler/attach
+/vis/viewer/set/autoRefresh true     # (older/newer compatible form)
+/vis/viewer/autoZoom
+/vis/viewer/update
+/vis/viewer/set/viewpointThetaPhi 90 180
+/vis/viewer/zoom 1.0
+
+/run/beamOn 5
